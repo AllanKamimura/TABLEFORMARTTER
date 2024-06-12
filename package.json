@@ -3,7 +3,7 @@
   "publisher": "allankamimura",
   "displayName": "tableformatter",
   "description": "TableFormatter is a versatile tool to write Toradex Hardware Documentation.  The main feature is formatting and navigation commands for Toradex tables.  TableFormatter also includes some snippets for common used expressions and auto-completion for internal reference sections and external files inside the documetation.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AllanKamimura/TABLEFORMARTTER.git"
