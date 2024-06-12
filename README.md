@@ -1,4 +1,4 @@
-# TableFormatter v1.3
+# TableFormatter v0.0.4
 
 TableFormatter is a versatile tool to write Toradex Hardware Documentation. 
 The main feature is formatting and navigation commands for Toradex tables. 
@@ -21,8 +21,12 @@ Install from the vscode extensions store
   - Format tables in LaTeX documents.
   - Note that the table must be **validaded** (fully working) before using the command.
 
+  <img src="./assets/ctrl+t.gif" alt="Ctrl + T funcionality">
+
 - **Ctrl + B**
   - Bold text in LaTeX or Markdown documents.
+  - 
+  <img src="./assets/ctrl+big.gif" alt="Ctrl + B, Ctrl + I, Ctrl + G">
 
 - **Ctrl + I**
   - Italicize text in LaTeX or Markdown documents.
@@ -35,11 +39,18 @@ Install from the vscode extensions store
 
 ### Table Navigation
 1. Use ```Alt + S``` to select a cell.
-2. Move between cells using the arrow keys.
+
+  <img src="./assets/arrow.gif" alt="navigate with arrows">
+
+
+1. Move between cells using the arrow keys.
 
 ### Snippets and auto-completion
 - Start typing ```\``` to see some common used latex commands
 - Type ```{``` to get some auto-completion suggestions
+
+<img src="./assets/snippets.gif" alt="snippets and auto-completion">
+
 
 # Contributing
 We welcome contributions from the community! If you have any ideas for improvements or new features, feel free to open an issue or submit a pull request.
