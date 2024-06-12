@@ -1,0 +1,57 @@
+{
+    "name": "Markdown with LaTeX Commands",
+    "scopeName": "latex-docBuild.injection",
+    "fileTypes": ["md"],
+    "injectionSelector": "L:text.html.markdown",
+
+    "patterns": [
+        {"include": "#nestedBrackets"},
+        {"include": "#latexFunction"}
+    ],
+
+    "repository": {
+        "nestedBrackets": {
+            "patterns": [
+                {
+                    "begin": "\\{",
+                    "end": "\\}",
+                    "name": "entity.name.variable",
+                    "beginCaptures": {
+                        "0": { "name": "punctuation.definition.dictionary.begin.json" }
+                      },
+                      "endCaptures": {
+                        "0": { "name": "punctuation.definition.dictionary.close.json" }
+                      },
+                    "patterns": [
+                        {
+                            "include": "#nestedBrackets"
+                        }
+                    ]
+                },
+                {
+                    "begin": "\\[",
+                    "end": "\\]",
+                    "name": "entity.name.class",
+                    "beginCaptures": {
+                        "0": { "name": "punctuation.definition.array.begin.json" }
+                      },
+                      "endCaptures": {
+                        "0": { "name": "punctuation.definition.array.close.json" }
+                      },
+                    "patterns": [
+                        {
+                            "include": "#nestedBrackets"
+                        }
+                    ]
+                }
+            ]
+        },
+        "latexFunction": {
+            "match": "(\\\\[a-zA-Z]+)",
+            "captures": {
+                "1": { "name": "entity.name.function" }
+            }
+        }
+    }
+
+}

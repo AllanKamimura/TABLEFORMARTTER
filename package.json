@@ -1,0 +1,148 @@
+{
+  "name": "tableformatter",
+  "publisher": "allankamimura",
+  "displayName": "tableformatter",
+  "description": "",
+  "version": "0.0.3",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown"
+],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "tableformatter.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "tableformatter.tableformatter",
+        "title": "TABLEFORMAT"
+      },
+      {
+        "command": "tableformatter.textBold",
+        "title": "bold the text selection"
+      },
+      {
+        "command": "tableformatter.textGt",
+        "title": "gray color the text selection"
+      },
+      {
+        "command": "tableformatter.textEmph",
+        "title": "emph the text selection"
+      },
+      {
+        "command": "tableformatter.cursorMoveLeft",
+        "title": "move to the cell to the left"
+      },
+      {
+        "command": "tableformatter.cursorMoveRight",
+        "title": "move to the cell to the right"
+      },
+      {
+        "command": "tableformatter.cursorMoveUp",
+        "title": "move to the cell above"
+      },
+      {
+        "command": "tableformatter.cursorMoveDown",
+        "title": "move to the cell below"
+      },
+      {
+        "command": "tableformatter.moveCursorInsideBraces",
+        "title": "Move Cursor Inside Braces"
+      }
+    ],
+    "keybindings": [
+      {
+        "key"    : "ctrl+t",
+        "command": "tableformatter.tableformatter",
+        "when"   : "editorTextFocus && editorLangId == 'latex'"
+      },
+      {
+          "key"    : "ctrl+b",
+          "command": "tableformatter.textBold",
+          "when"   : "editorTextFocus && (editorLangId == 'latex' || editorLandId == 'markdown')"
+      },
+      {
+          "key"    : "ctrl+i",
+          "command": "tableformatter.textEmph",
+          "when"   : "editorTextFocus && (editorLangId == 'latex' || editorLandId == 'markdown')"
+      },
+      {
+          "key"    : "ctrl+g",
+          "command": "tableformatter.textGt",
+          "when"   : "editorTextFocus && (editorLangId == 'latex' || editorLandId == 'markdown')"
+      },
+      {
+          "key"    : "left",
+          "command": "tableformatter.cursorMoveLeft",
+          "when"   : "editorTextFocus && editorLangId == 'latex'"
+      },
+      {
+          "key"    : "right",
+          "command": "tableformatter.cursorMoveRight",
+          "when"   : "editorTextFocus && editorLangId == 'latex'"
+      },
+      {
+          "key"    : "up",
+          "command": "tableformatter.cursorMoveUp",
+          "when"   : "editorTextFocus && editorLangId == 'latex'"
+      },
+      {
+          "key"    : "down",
+          "command": "tableformatter.cursorMoveDown",
+          "when"   : "editorTextFocus && editorLangId == 'latex'"
+      },
+      {
+          "key"    : "alt+s",
+          "command": "tableformatter.selectTextBetweenBrackets",
+          "when"   : "editorTextFocus && editorLangId == 'latex'"
+      },
+      {
+          "key": "ctrl+alt+shift+i",
+          "command": "editor.action.inspectTMScopes"
+      }
+    ],
+    "grammars": [ 
+      {
+        "scopeName": "latex-docBuild.injection",
+        "path": "./syntaxes/injection.json",
+        "injectTo": ["text.html.markdown"],
+        "embeddedLanguages": {
+          "punctuation.definition.dictionary.begin.json": "json",
+          "punctuation.definition.dictionary.close.json": "json",
+          "punctuation.definition.array.begin.json": "json",
+          "punctuation.definition.array.close.json": "json"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.87.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
